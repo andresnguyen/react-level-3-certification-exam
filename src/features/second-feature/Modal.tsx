@@ -28,7 +28,7 @@ export default function Modal({
         onClose();
       }
     },
-    [onClose]
+    [onClose, regularDialog]
   );
 
   useEffect(() => {
