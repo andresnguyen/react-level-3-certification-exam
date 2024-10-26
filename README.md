@@ -1,65 +1,76 @@
-# React Level 2 Certification
+# React Level 3 Certification
 
-**Project Goal:** Build a small quiz maker application that creates a 5-question quiz based on a trivia API.
+## Exercise 1: Create a Generic `localStorage` Handler Usable by React Function Components
 
-**Documentation URL:** [Project Document](https://bit.ly/react-cert-l2-quiz)
+1. **API for Key-Value Storage**
+
+   - Enable any React function component to store a new key/value pair in the browser's `localStorage`.
+
+2. **Subscription for Value Updates**
+
+   - Allow components to subscribe to a specific key and receive updates when the value is added, updated, or deleted. Updates should trigger re-renders as necessary.
+
+3. **Encapsulation of `localStorage` Logic**
+
+   - Hide all `localStorage` interactions from consumer components. Components should remain unaware of the underlying storage mechanism.
+
+4. **External Changes Handling**
+
+   - If a `localStorage` value changes outside of the React app's scope, subscribed components should receive an update (a slight delay is acceptable).
+
+5. **Example Illustration**
+   - Demonstrate with two components: one sets a value in `localStorage` using the API, while the other displays any updates immediately on the screen.
 
 ---
 
-## 1. Project Overview
+## Exercise 2: Create a Generic Dialog Component Customizable with Any Content
 
-This project requires creating a quiz application using React that fetches trivia questions from an external API.
+In this task, you’ll create a dialog component to be used as an overlay for various use cases:
 
-## 2. Project Steps
+1. **Modal and Regular Dialog Modes**
 
-### Step #1 - Implement Category and Difficulty Selection
+   - The component should work as a modal (blocking user interaction with the rest of the page) or as a regular dialog (allowing interaction with the rest of the page).
 
-1. **Trivia Categories**:
-   - Fetch categories from the API: [Get Categories API](https://opentdb.com/api_category.php).
-2. **Difficulty Levels**:
+2. **No Third-Party Components**
 
-   - Provide three difficulty options: _Easy_, _Medium_, and _Hard_.
+   - Do not use third-party component libraries, but you may use third-party CSS for overlay effects.
 
-3. **UI Elements**:
-   - Use the following `id` attributes:
-     - `categorySelect` for the category dropdown.
-     - `difficultySelect` for the difficulty dropdown.
-     - `createBtn` for the quiz creation button.
+3. **Flexible Structure**
 
-> **Note**: Styling is not a priority. The layout can vary as long as the app functions as specified.
+   - Allow users to set any HTML/component as the dialog's header, body, and footer. The dialog API should also enable open/close actions from another component.
 
-### Step #2 - Display a 5-Question Quiz
+4. **Sample Usage**
+   - Create a sample component illustrating different dialog use cases.
 
-1. **API Request**:
+---
 
-   - Fetch 5 trivia questions based on the selected category and difficulty using the Open Trivia Database API.
-   - Example request for "Easy" film trivia:  
-     `https://opentdb.com/api.php?amount=5&category=11&difficulty=easy&type=multiple`
+## Exercise 3: Create a Generic Auto-Filter Dropdown Component to Filter Any Data List
 
-2. **Display Answers**:
+Create a dropdown component that filters a list based on user input, adaptable to various data types:
 
-   - Show answers in random order. Each answer should be a clickable button.
-   - Highlight selected answers and keep them highlighted.
+1. **Text-Based Filtering**
 
-3. **Submit Button**:
-   - A "Submit" button should appear after all questions are answered.
+   - Filter the list as the user types, showing only items containing the input text (e.g., typing "En" filters items with "en" in their names).
 
-### Step #3 - Display Quiz Results
+2. **Case Insensitivity**
 
-1. **Result Component**:
+   - Ensure filtering is not case-sensitive.
 
-   - On submission, navigate to a new component (using React Router) to show results.
-   - Highlight answers:
-     - Green for correct answers.
-     - Red for incorrect answers.
-     - The correct answer is always displayed in green.
+3. **Customizable Properties**
 
-2. **Scoring**:
+   - Allow users to specify the object property name for the label and filter criteria (e.g., “name” or “description”) via props.
 
-   - Show a color-coded score indicator based on correct answers:
-     - **Red**: 0–1 correct answers
-     - **Yellow**: 2–3 correct answers
-     - **Green**: 4–5 correct answers
+4. **Highlight Matching Text**
 
-3. **Reset Button**:
-   - Include a button that allows users to create a new quiz from the result screen.
+   - Render matching portions of the option label in bold (e.g., **Enter**tainment).
+
+5. **Callback for Selected Value**
+
+   - When an item is selected, return it via a callback prop called `valueChange`.
+
+6. **No Third-Party Components**
+
+   - Use only HTML, CSS, and React; avoid third-party components.
+
+7. **Example Illustration**
+   - Use the auto-filter dropdown in a test component with two different data samples. For one sample, you may use this public API: [JSONPlaceholder Users](https://jsonplaceholder.typicode.com/users).
