@@ -6,13 +6,11 @@
 
 ---
 
-## Project Overview
+## 1. Project Overview
 
 This project requires creating a quiz application using React that fetches trivia questions from an external API.
 
----
-
-## Project Steps
+## 2. Project Steps
 
 ### Step #1 - Implement Category and Difficulty Selection
 
@@ -30,8 +28,6 @@ This project requires creating a quiz application using React that fetches trivi
 
 > **Note**: Styling is not a priority. The layout can vary as long as the app functions as specified.
 
----
-
 ### Step #2 - Display a 5-Question Quiz
 
 1. **API Request**:
@@ -47,8 +43,6 @@ This project requires creating a quiz application using React that fetches trivi
 
 3. **Submit Button**:
    - A "Submit" button should appear after all questions are answered.
-
----
 
 ### Step #3 - Display Quiz Results
 
@@ -69,5 +63,3 @@ This project requires creating a quiz application using React that fetches trivi
 
 3. **Reset Button**:
    - Include a button that allows users to create a new quiz from the result screen.
-
----
